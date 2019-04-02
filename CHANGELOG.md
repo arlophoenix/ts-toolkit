@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Fixed reporting artifacts in CI
+
 ## [v2.0.0](https://github.com/arlophoenix/ts-toolkit/compare/v2.0.0...v1.0.0) - 2019-04-02
 
 ### Breaking Change
