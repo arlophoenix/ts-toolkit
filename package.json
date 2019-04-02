@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "ts-toolkit",
-  "description": "Everything I need to be running with typescript.",
+  "description": "Get a project up and running with Typescript. Includes Typescript, Babel, Jest, ESLint, Prettier, CircleCI, VSCode config and more.",
   "license": "MIT",
   "author": "Arlo Armstrong",
   "homepage": "https://github.com/arlophoenix/ts-toolkit",
