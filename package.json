@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "ts-toolkit",
   "description": "Get a project up and running with Typescript. Includes Typescript, Babel, Jest, ESLint, Prettier, CircleCI, VSCode config and more.",
   "license": "MIT",
