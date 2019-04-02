@@ -33,6 +33,8 @@ This will add the dependencies and copy over necessary config files.
 
 ## Publish
 
+Automatically published to npmjs when a version bump is detected by CI.
+
 `yarn version`
 
 ## Credits
