@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: update-dependency-manager
-          command: "sudo npm install -g yarn@^1.13.0"
+          command: "sudo npm install -g yarn@^1.15"
       # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
