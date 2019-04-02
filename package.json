@@ -13,7 +13,7 @@
     "tsk": "dist/bin/tsk.js"
   },
   "scripts": {
-    "prepublishOnly": "yarn run build",
+    "prepublishOnly": "yarn run tsk build",
     "tsk": "babel-node --config-file ./.babelrc.js --extensions .ts src/bin/tsk.ts",
     "postversion": "git push --follow-tags"
   },
