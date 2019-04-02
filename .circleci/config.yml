@@ -28,15 +28,20 @@ jobs:
 
 workflows:
   version: 2
-  test-deploy:
+  test-deploy: # https://circleci.com/docs/2.0/workflows/#executing-workflows-for-a-git-tag
     jobs:
-      - test
+      - test:
+          filters: # required since `deploy` has tag filters AND requires `build`
+            tags:
+              only: /.*/
       - publish:
           requires:
             - test
           filters:
             tags:
               only: /v[0-9]+(\.[0-9]+)*/
+          branches:
+            ignore: /.*/
 
 commands:
   build:
