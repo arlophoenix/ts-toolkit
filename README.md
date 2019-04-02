@@ -31,7 +31,7 @@ This will add the dependencies and copy over necessary config files.
 - PRs welcome.
 - Everyone welcome.
 
-## Release
+## Publish
 
 `yarn version`
 
