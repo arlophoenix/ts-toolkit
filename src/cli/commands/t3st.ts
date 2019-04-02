@@ -20,6 +20,7 @@ export function testJest({
       `${baseJest} --ci --maxWorkers=2 --reporters=default --reporters=jest-junit`,
       {
         commandOptions: {
+          // eslint-disable-next-line unicorn/prevent-abbreviations
           env: { ...process.env, JEST_JUNIT_OUTPUT: "reports/junit/tests.xml" },
         },
       },

@@ -16,7 +16,7 @@ export function lintEslint({
   if (createReport) {
     "--format junit --output-file reports/junit/lint.xml"
       .split(" ")
-      .forEach(arg => additionalArguments.push(arg));
+      .forEach(argument => additionalArguments.push(argument));
   }
   spawn(
     "yarn eslint --ignore-path .gitignore --cache --format=pretty --max-warnings=0",
