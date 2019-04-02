@@ -28,10 +28,10 @@ jobs:
 
 workflows:
   version: 2
-  test-deploy: # https://circleci.com/docs/2.0/workflows/#executing-workflows-for-a-git-tag
+  test-publish: # https://circleci.com/docs/2.0/workflows/#executing-workflows-for-a-git-tag
     jobs:
       - test:
-          filters: # required since `deploy` has tag filters AND requires `build`
+          filters: # required since `publish` has tag filters AND requires `test`
             tags:
               only: /.*/
       - publish:
