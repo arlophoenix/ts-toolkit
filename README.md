@@ -25,6 +25,14 @@ This will add the dependencies and copy over necessary config files.
   yarn tsk install
 ```
 
+## Best used with
+
+- [VSCode](https://code.visualstudio.com/)
+- [`direnv`](https://direnv.net/)
+- [`nvm`](https://github.com/creationix/nvm)
+- [`yarn`](https://yarnpkg.com)
+- [`yvm`](https://yvm.js.org/docs/overview)
+
 ## Contributing
 
 - Feedback welcome.
