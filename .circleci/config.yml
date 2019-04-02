@@ -20,11 +20,8 @@ jobs:
           paths:
             - ./node_modules
       - run:
-          name: lint
-          command: yarn tsk lint:eslint --report
-      - run:
           name: test
-          command: yarn tsk test:jest --report
+          command: yarn tsk test --report
       # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
       - store_artifacts:
           path: coverage
