@@ -5,9 +5,10 @@ import { spawn } from "../../utils/spawn";
 import { addPositionalGlob } from "../../utils/yargs";
 
 const lintEslintDefaultGlob = defaultCodeGlob;
+const createReportDefault = false;
 export function lintEslint({
   glob = lintEslintDefaultGlob,
-  report: createReport = false,
+  report: createReport = createReportDefault,
 }: {
   glob?: string;
   report?: boolean;
@@ -47,11 +48,15 @@ export function lintPrettier({
   spawn("yarn prettier --ignore-path .gitignore --list-different", {}, glob);
 }
 
-export function lint(): void {
+export function lint({
+  report: createReport = createReportDefault,
+}: {
+  report?: boolean;
+} = {}): void {
   lintPackage();
   lintPrettier();
   lintImport();
-  lintEslint();
+  lintEslint({ report: createReport });
 }
 
 export function addLintCommands<T = {}>({
@@ -60,7 +65,19 @@ export function addLintCommands<T = {}>({
   to: Argv<T>;
 }): Argv<T> {
   return builder
-    .command("lint", "checks file compliance with styleguide", {}, lint)
+    .command(
+      "lint [--report]",
+      "checks file compliance with styleguide",
+      {
+        report: {
+          describe:
+            "if true creates a junit xml file containing the output of the linter. Intended for use in CI",
+          type: "boolean",
+          default: createReportDefault,
+        },
+      },
+      lint,
+    )
     .command(
       "lint:eslint [--report] [glob]",
       "checks code file compliance with styleguide",
@@ -69,7 +86,7 @@ export function addLintCommands<T = {}>({
           describe:
             "if true creates a junit xml file containing the output of the linter. Intended for use in CI",
           type: "boolean",
-          default: false,
+          default: createReportDefault,
         }),
       lintEslint,
     )

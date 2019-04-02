@@ -9,8 +9,9 @@ export function tdd(): void {
   spawn("yarn jest --watch");
 }
 
+const createReportDefault = false;
 export function testJest({
-  report: createReport = false,
+  report: createReport = createReportDefault,
 }: {
   report?: boolean;
 } = {}): void {
@@ -39,10 +40,14 @@ export function todos({
   spawn("yarn leasot --ignore='node_modules/**','dist/**','.git/**'", {}, glob);
 }
 
-export function test(): void {
+export function test({
+  report: createReport = createReportDefault,
+}: {
+  report?: boolean;
+} = {}): void {
   todos();
-  lint();
-  testJest();
+  lint({ report: createReport });
+  testJest({ report: createReport });
 }
 
 export function addTestCommands<T = {}>({
@@ -53,20 +58,27 @@ export function addTestCommands<T = {}>({
   return builder
     .command("tdd", "run tests on file changes", {}, tdd)
     .command(
-      "test",
+      "test [--report]",
       "validates code conforms to styleguide and works as expected",
-      {},
+      {
+        report: {
+          describe:
+            "if true creates a junit xml file containing the output of the tests. Intended for use in CI",
+          type: "boolean",
+          default: createReportDefault,
+        },
+      },
       test,
     )
     .command(
-      "test:jest [report]",
+      "test:jest [--report]",
       "run tests",
       {
         report: {
           describe:
             "if true creates a junit xml file containing the output of the tests. Intended for use in CI",
           type: "boolean",
-          default: false,
+          default: createReportDefault,
         },
       },
       testJest,
