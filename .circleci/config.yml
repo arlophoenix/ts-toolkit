@@ -43,6 +43,8 @@ workflows:
           filters: # required since `publish` has tag filters AND requires `test`
             tags:
               only: /.*/
+            branches:
+              ignore: /.*/
       - publish:
           requires:
             - test
