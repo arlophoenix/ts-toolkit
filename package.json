@@ -14,7 +14,7 @@
   },
   "scripts": {
     "tsk": "babel-node --config-file ./.babelrc.js --extensions .ts src/bin/tsk.ts",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push --follow-tags"
   },
   "dependencies": {
     "@babel/cli": "^7.2.3",
