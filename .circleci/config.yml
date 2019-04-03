@@ -23,11 +23,20 @@ jobs:
       - image: circleci/node:10.14.1
     steps:
       - build
-      - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-      - run: yarn publish
+      - run:
+          name: authorize publish
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+      - run:
+          name: publish
+          command: yarn publish
 
 workflows:
   version: 2
+  # only runs on branch pushes
+  test:
+    jobs:
+      - test
+  # only runs on tag pushes
   test-publish: # https://circleci.com/docs/2.0/workflows/#executing-workflows-for-a-git-tag
     jobs:
       - test:
@@ -39,22 +48,27 @@ workflows:
             - test
           filters:
             tags:
-              only: /v[0-9]+(\.[0-9]+)*/
+              only: /^v[0-9]+(\.[0-9]+)*/
+            branches:
+              ignore: /.*/
 
 commands:
   build:
     steps:
       - checkout
       - run:
-          name: update-dependency-manager
+          name: update dependency manager
           command: "sudo npm install -g yarn@^1.15"
       # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: install-dependencies
+          name: install dependencies
           command: yarn install
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
+      - run:
+          name: build
+          command: yarn tsk build
