@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v2.1.16](https://github.com/arlophoenix/ts-toolkit/compare/v2.1.15...v2.1.16) - 2019-04-03
+
 ### Changed
 
 - Fix VSCode test tasks
