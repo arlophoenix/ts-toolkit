@@ -22,7 +22,6 @@ module.exports = {
   ],
   env: {
     node: true,
-    jest: true,
   },
   root: true,
   rules: {
@@ -30,4 +29,12 @@ module.exports = {
     "import/prefer-default-export": "off",
     "import/no-default-export": "error",
   },
+  overrides: [
+    {
+      files: ["src/**/*.test.ts"],
+      env: {
+        jest: true,
+      },
+    },
+  ],
 };
