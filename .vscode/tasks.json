@@ -5,13 +5,17 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "npm",
-      "script": "test",
+      "label": "Run all tests",
+      "type": "shell",
+      "command": "yarn",
+      "args": ["tsk", "test"],
       "group": "test"
     },
     {
-      "type": "npm",
-      "script": "test:jest",
+      "label": "Run jest tests",
+      "type": "shell",
+      "command": "yarn",
+      "args": ["tsk", "test:jest"],
       "group": {
         "kind": "test",
         "isDefault": true
