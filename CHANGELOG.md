@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v2.1.18](https://github.com/arlophoenix/ts-toolkit/compare/v2.1.17...v2.1.18) - 2019-04-04
+
+### Changed
+
+- eslint jest globals only apply to test files
+- remove requirement for return types on inline arrow functions
+
 ## [v2.1.17](https://github.com/arlophoenix/ts-toolkit/compare/v2.1.16...v2.1.17) - 2019-04-04
 
 ### Changed
