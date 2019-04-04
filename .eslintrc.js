@@ -36,5 +36,14 @@ module.exports = {
         jest: true,
       },
     },
+    {
+      files: ["**/*.*"],
+      rules: {
+        "@typescript-eslint/explicit-function-return-type": [
+          "error",
+          { allowExpressions: true },
+        ],
+      },
+    },
   ],
 };
