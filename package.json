@@ -30,7 +30,7 @@
     "@types/node": "^11.13.0",
     "@types/shell-quote": "^1.6.1",
     "@types/yargs": "^12.0.11",
-    "@typescript-eslint/eslint-plugin": "^1.5.0",
+    "@typescript-eslint/eslint-plugin": "^1.6.0",
     "cross-spawn": "^6.0.5",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-typescript": "^1.1.0",
