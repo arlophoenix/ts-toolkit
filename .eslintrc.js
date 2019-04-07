@@ -39,10 +39,13 @@ module.exports = {
     {
       files: ["**/*.*"],
       rules: {
+        // allow missing return type on arrow functions
         "@typescript-eslint/explicit-function-return-type": [
           "error",
           { allowExpressions: true },
         ],
+        // allow names like arg
+        "unicorn/prevent-abbreviations": "off",
       },
     },
   ],
