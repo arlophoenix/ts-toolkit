@@ -30,7 +30,7 @@ export function formatPrettier({
 }: {
   glob?: string;
 } = {}): void {
-  spawn("yarn prettier --write", {}, glob);
+  spawn("yarn prettier --ignore-path .eslintignore --write", {}, glob);
 }
 
 export function format(): void {

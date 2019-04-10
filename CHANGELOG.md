@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/arlophoenix/ts-toolkit/compare/v3.0.0...master)
 
+### Changed
+
+- fix prettier ignore
+
 ## [v3.0.0](https://github.com/arlophoenix/ts-toolkit/compare/v2.1.19...v3.0.0) - 2019-04-10
 
 ### BREAKING CHANGE

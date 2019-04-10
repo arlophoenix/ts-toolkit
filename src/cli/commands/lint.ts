@@ -45,7 +45,7 @@ export function lintPrettier({
 }: {
   glob?: string;
 } = {}): void {
-  spawn("yarn prettier --list-different", {}, glob);
+  spawn("yarn prettier --ignore-path .eslintignore --list-different", {}, glob);
 }
 
 export function lint({

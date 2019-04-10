@@ -66,7 +66,7 @@ describe("format module", () => {
     it("spawns prettier with default glob", () => {
       formatPrettier();
       expect(spawnModule.spawn).toHaveBeenCalledWith(
-        "yarn prettier --write",
+        "yarn prettier --ignore-path .eslintignore --write",
         {},
         "**/*.{json,md,yaml,yml}",
       );
@@ -75,7 +75,7 @@ describe("format module", () => {
     it("uses custom glob in spawned prettier", () => {
       formatPrettier({ glob: "*.foo" });
       expect(spawnModule.spawn).toHaveBeenCalledWith(
-        "yarn prettier --write",
+        "yarn prettier --ignore-path .eslintignore --write",
         {},
         "*.foo",
       );

@@ -74,7 +74,7 @@ describe("lint module", () => {
     it("spawns prettier with default glob", () => {
       lintPrettier();
       expect(spawnModule.spawn).toHaveBeenCalledWith(
-        "yarn prettier --list-different",
+        "yarn prettier --ignore-path .eslintignore --list-different",
         {},
         "**/*.{json,md,yaml,yml}",
       );
@@ -83,7 +83,7 @@ describe("lint module", () => {
     it("uses custom glob in spawned prettier", () => {
       lintPrettier({ glob: "*.foo" });
       expect(spawnModule.spawn).toHaveBeenCalledWith(
-        "yarn prettier --list-different",
+        "yarn prettier --ignore-path .eslintignore --list-different",
         {},
         "*.foo",
       );
