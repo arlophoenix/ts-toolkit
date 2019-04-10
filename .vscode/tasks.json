@@ -20,6 +20,13 @@
         "kind": "test",
         "isDefault": true
       }
+    },
+    {
+      "label": "Run related jest tests",
+      "type": "shell",
+      "command": "yarn",
+      "args": ["jest", "--findRelatedTests", "${file}"],
+      "group": "test"
     }
   ]
 }
