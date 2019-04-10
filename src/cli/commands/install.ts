@@ -9,6 +9,7 @@ const configPathsDefault = [
   ".editorconfig",
   ".envrc",
   ".eslintrc.js",
+  ".eslintignore",
   ".gitignore",
   ".huskyrc.js",
   ".npmignore",

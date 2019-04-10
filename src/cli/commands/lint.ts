@@ -20,7 +20,7 @@ export function lintEslint({
       .forEach(argument => additionalArguments.push(argument));
   }
   spawn(
-    "yarn eslint --ignore-path .gitignore --cache --format=pretty --max-warnings=0",
+    "yarn eslint --cache --format=pretty --max-warnings=0",
     {},
     ...additionalArguments,
   );
@@ -45,7 +45,7 @@ export function lintPrettier({
 }: {
   glob?: string;
 } = {}): void {
-  spawn("yarn prettier --ignore-path .gitignore --list-different", {}, glob);
+  spawn("yarn prettier --list-different", {}, glob);
 }
 
 export function lint({

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/arlophoenix/ts-toolkit/compare/v2.1.19...master)
 
+### BREAKING CHANGE
+
+- added .eslintignore file (previously used .gitignore command line arguments) for better support in VSCode. Run `tsk install` after upgrading.
+
+### Changed
+
+- update dependencies
+
 ## [v2.1.19](https://github.com/arlophoenix/ts-toolkit/compare/v2.1.18...v2.1.19) - 2019-04-07
 
 ### Changed

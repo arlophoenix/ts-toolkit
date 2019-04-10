@@ -8,11 +8,7 @@ const formatEslintDefaultGlob = defaultCodeGlob;
 export function formatEslint({
   glob = formatEslintDefaultGlob,
 }: { glob?: string } = {}): void {
-  spawn(
-    "yarn eslint --ignore-path .gitignore --cache --format=pretty --fix",
-    {},
-    glob,
-  );
+  spawn("yarn eslint --cache --format=pretty --fix", {}, glob);
 }
 
 const formatImportDefaultGlob = defaultCodeGlob;
@@ -34,7 +30,7 @@ export function formatPrettier({
 }: {
   glob?: string;
 } = {}): void {
-  spawn("yarn prettier --ignore-path .gitignore --write", {}, glob);
+  spawn("yarn prettier --write", {}, glob);
 }
 
 export function format(): void {

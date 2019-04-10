@@ -12,7 +12,7 @@ describe("lint module", () => {
     it("spawns eslint with default glob", () => {
       lintEslint();
       expect(spawnModule.spawn).toHaveBeenCalledWith(
-        "yarn eslint --ignore-path .gitignore --cache --format=pretty --max-warnings=0",
+        "yarn eslint --cache --format=pretty --max-warnings=0",
         {},
         "**/*.{js,ts}",
       );
@@ -21,7 +21,7 @@ describe("lint module", () => {
     it("uses custom glob in spawned eslint", () => {
       lintEslint({ glob: "*.foo" });
       expect(spawnModule.spawn).toHaveBeenCalledWith(
-        "yarn eslint --ignore-path .gitignore --cache --format=pretty --max-warnings=0",
+        "yarn eslint --cache --format=pretty --max-warnings=0",
         {},
         "*.foo",
       );
@@ -30,7 +30,7 @@ describe("lint module", () => {
     it("adds junit args to spawned eslint, when report is true", () => {
       lintEslint({ report: true });
       expect(spawnModule.spawn).toHaveBeenCalledWith(
-        "yarn eslint --ignore-path .gitignore --cache --format=pretty --max-warnings=0",
+        "yarn eslint --cache --format=pretty --max-warnings=0",
         {},
         "**/*.{js,ts}",
         "--format",
@@ -74,7 +74,7 @@ describe("lint module", () => {
     it("spawns prettier with default glob", () => {
       lintPrettier();
       expect(spawnModule.spawn).toHaveBeenCalledWith(
-        "yarn prettier --ignore-path .gitignore --list-different",
+        "yarn prettier --list-different",
         {},
         "**/*.{json,md,yaml,yml}",
       );
@@ -83,7 +83,7 @@ describe("lint module", () => {
     it("uses custom glob in spawned prettier", () => {
       lintPrettier({ glob: "*.foo" });
       expect(spawnModule.spawn).toHaveBeenCalledWith(
-        "yarn prettier --ignore-path .gitignore --list-different",
+        "yarn prettier --list-different",
         {},
         "*.foo",
       );

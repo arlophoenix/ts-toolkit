@@ -5,6 +5,7 @@
 !/.dependabot/**
 !/.editorconfig
 !/.envrc
+!/.eslintignore
 !/.eslintrc.js
 !/.gitignore
 !/.huskyrc.js

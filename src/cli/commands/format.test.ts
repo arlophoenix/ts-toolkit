@@ -17,7 +17,7 @@ describe("format module", () => {
     it("spawns eslint with default glob", () => {
       formatEslint();
       expect(spawnModule.spawn).toHaveBeenCalledWith(
-        "yarn eslint --ignore-path .gitignore --cache --format=pretty --fix",
+        "yarn eslint --cache --format=pretty --fix",
         {},
         "**/*.{js,ts}",
       );
@@ -26,7 +26,7 @@ describe("format module", () => {
     it("uses custom glob in spawned eslint", () => {
       formatEslint({ glob: "*.foo" });
       expect(spawnModule.spawn).toHaveBeenCalledWith(
-        "yarn eslint --ignore-path .gitignore --cache --format=pretty --fix",
+        "yarn eslint --cache --format=pretty --fix",
         {},
         "*.foo",
       );
@@ -66,7 +66,7 @@ describe("format module", () => {
     it("spawns prettier with default glob", () => {
       formatPrettier();
       expect(spawnModule.spawn).toHaveBeenCalledWith(
-        "yarn prettier --ignore-path .gitignore --write",
+        "yarn prettier --write",
         {},
         "**/*.{json,md,yaml,yml}",
       );
@@ -75,7 +75,7 @@ describe("format module", () => {
     it("uses custom glob in spawned prettier", () => {
       formatPrettier({ glob: "*.foo" });
       expect(spawnModule.spawn).toHaveBeenCalledWith(
-        "yarn prettier --ignore-path .gitignore --write",
+        "yarn prettier --write",
         {},
         "*.foo",
       );
