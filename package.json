@@ -8,7 +8,7 @@
   "bugs": {
     "url": "https://github.com/arlophoenix/ts-toolkit/issues"
   },
-  "version": "3.0.3",
+  "version": "4.0.0",
   "bin": {
     "tsk": "dist/bin/tsk.js"
   },
