@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/arlophoenix/ts-toolkit/compare/v4.0.1...master)
 
+### Added
+
+- newFile command for creating file and test partner
+
 ## [v4.0.1](https://github.com/arlophoenix/ts-toolkit/compare/v4.0.0...v4.0.1) - 2019-04-18
 
 ### Changed
