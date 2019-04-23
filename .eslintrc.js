@@ -46,6 +46,8 @@ module.exports = {
         ],
         // allow names like arg
         "unicorn/prevent-abbreviations": "off",
+        // conflicts with airbnb no-for-of-loop
+        "unicorn/no-for-loop": "off",
       },
     },
   ],
