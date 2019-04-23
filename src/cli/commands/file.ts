@@ -3,6 +3,8 @@ import path from "path";
 
 import yargs from "yargs";
 
+import { spawn } from "../../utils/spawn";
+
 /* eslint-disable no-console */
 export function newFile({ path: filePath }: { path?: string } = {}): void {
   if (!filePath || filePath.length === 0) {
@@ -14,18 +16,24 @@ export function newFile({ path: filePath }: { path?: string } = {}): void {
     return;
   }
 
-  const extension = path.extname(filePath);
+  let extension = path.extname(filePath);
+  let dirname;
+  let fileName;
   if (extension.length > 0) {
-    const dirname = path.dirname(filePath);
-    const fileName = path.basename(filePath, extension);
-    fs.mkdirSync(dirname, { recursive: true });
-    fs.writeFileSync(`${dirname}/${fileName}${extension}`, "");
-    fs.writeFileSync(`${dirname}/${fileName}.test${extension}`, "");
+    dirname = path.dirname(filePath);
+    fileName = path.basename(filePath, extension);
   } else {
-    fs.mkdirSync(filePath, { recursive: true });
-    fs.writeFileSync(`${filePath}/index.ts`, "");
-    fs.writeFileSync(`${filePath}/index.test.ts`, "");
+    dirname = filePath;
+    fileName = "index";
+    extension = ".ts";
   }
+  const file = `${dirname}/${fileName}${extension}`;
+  const testFile = `${dirname}/${fileName}.test${extension}`;
+  fs.mkdirSync(dirname, { recursive: true });
+  [file, testFile].forEach(f => {
+    fs.writeFileSync(f, "");
+    spawn("open", {}, f);
+  });
 }
 /* eslint-enable no-console */
 
