@@ -52,7 +52,7 @@
     "jest": "^24.8.0",
     "jest-junit": "^6.4.0",
     "leasot": "^7.3.4",
-    "lint-staged": "^8.1.6",
+    "lint-staged": "^8.1.7",
     "prettier": "^1.17.1",
     "prettier-package-json": "^2.1.0",
     "shell-quote": "^1.6.1",
