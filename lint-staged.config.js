@@ -8,6 +8,7 @@ module.exports = {
     "**/*.{js,ts}": [
       "yarn tsk format:import",
       "yarn tsk format:eslint",
+      "yarn tsk test:jest --onlyChanged",
       "git add",
     ],
   },

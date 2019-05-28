@@ -10,12 +10,18 @@ export function tdd(): void {
 }
 
 const createReportDefault = false;
+const onlyChangedDefault = false;
 export function testJest({
   report: createReport = createReportDefault,
+  onlyChanged = onlyChangedDefault,
 }: {
   report?: boolean;
+  onlyChanged?: boolean;
 } = {}): void {
-  const baseJest = "yarn jest --coverage";
+  let baseJest = "yarn jest --coverage";
+  if (onlyChanged) {
+    baseJest += " --onlyChanged";
+  }
   if (createReport) {
     spawn(
       `${baseJest} --ci --maxWorkers=2 --reporters=default --reporters=jest-junit`,
@@ -26,9 +32,10 @@ export function testJest({
         },
       },
     );
-  } else {
-    spawn(baseJest);
+    return;
   }
+
+  spawn(baseJest);
 }
 
 const todosDefaultGlob = defaultCodeGlob;
@@ -71,7 +78,7 @@ export function addTestCommands<T = {}>({
       test,
     )
     .command(
-      "test:jest [--report]",
+      "test:jest [--report] [--onlyChanged]",
       "run tests",
       {
         report: {
@@ -79,6 +86,11 @@ export function addTestCommands<T = {}>({
             "if true creates a junit xml file containing the output of the tests. Intended for use in CI",
           type: "boolean",
           default: createReportDefault,
+        },
+        onlyChanged: {
+          describe: "if true only runs tests against changed files",
+          type: "boolean",
+          default: onlyChangedDefault,
         },
       },
       testJest,

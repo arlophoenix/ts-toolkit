@@ -5,7 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/arlophoenix/ts-toolkit/compare/v6.0.0...master)
+## [Unreleased](https://github.com/arlophoenix/ts-toolkit/compare/v6.1.0...master)
+
+## [v6.1.0](https://github.com/arlophoenix/ts-toolkit/compare/v6.0.0...v6.1.0) - 2019-05-27
+
+### Changed
+
+- Relevant tests are run on commit
 
 ## [v6.0.0](https://github.com/arlophoenix/ts-toolkit/compare/v5.0.2...v6.0.0) - 2019-05-27
 
