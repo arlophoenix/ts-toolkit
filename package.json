@@ -55,7 +55,7 @@
     "prettier-package-json": "^2.1.0",
     "shell-quote": "^1.6.1",
     "typescript": "^3.5.3",
-    "yargs": "^13.2.4"
+    "yargs": "^13.3.0"
   },
   "devDependencies": {},
   "engines": {
