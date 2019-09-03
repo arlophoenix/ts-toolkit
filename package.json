@@ -53,7 +53,7 @@
     "lint-staged": "^8.2.1",
     "prettier": "^1.18.2",
     "prettier-package-json": "^2.1.0",
-    "shell-quote": "^1.7.1",
+    "shell-quote": "^1.7.2",
     "typescript": "^3.6.2",
     "yargs": "^13.3.0"
   },
